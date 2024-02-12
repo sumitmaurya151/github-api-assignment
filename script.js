@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Debounce function to delay search input handling
     let debounceTimer;
     function debounce(func, delay) {
-        console.log(debounceTimer)
         // Clear any existing debounce timer
         clearTimeout(debounceTimer);
         // Set a new debounce timer
