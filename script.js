@@ -29,6 +29,9 @@ document.addEventListener('DOMContentLoaded', function() {
             const sortBy = 'followers';
             // Fetch user data from GitHub API based on search term
             const response = await fetch(`https://api.github.com/search/users?q=${searchTerm}+&sort=${sortBy}`);
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
             const data = await response.json();
             // Display search results
             displayResults(data.items);
